@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'icomoon';
-    src:url('../fonts/font.eot');
-    src:url('../fonts/font.eot') format('embedded-opentype'),
+    src: url('../fonts/font.eot');
+    src: url('../fonts/font.eot') format('embedded-opentype'),
     url('../fonts/font.ttf') format('truetype'),
     url('../fonts/font.woff') format('woff'),
     url('../fonts/font.svg') format('svg');
@@ -9,13 +9,17 @@
     font-style: normal;
 }
 
-.showSide, [class^="icon-"], [class*=" icon-"] {
-    font-family: 'icomoon';
+.cbi-button-up,
+.cbi-button-down,
+.cbi-value-helpicon,
+.showSide,
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon' !important;
     speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
     line-height: 1;
 
     -webkit-font-smoothing: antialiased;
@@ -55,6 +59,16 @@ input {
     padding: 0.36rem 0.5rem;
 }
 
+code {
+    color: #0099CC;
+}
+
+abbr {
+    color: #0099CC;
+    text-decoration: underline;
+    cursor: help;
+}
+
 header, footer, .main {
     width: 100%;
     position: absolute;
@@ -62,7 +76,7 @@ header, footer, .main {
 
 header {
     height: 4rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,.26);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
     transition: box-shadow .2s;
     float: left;
     position: fixed;
@@ -228,14 +242,14 @@ fieldset {
 
     border-radius: 0;
     background-color: #FFF;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.16),0 0 2px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 2px 0 rgba(0, 0, 0, .12);
 }
 
-fieldset > legend{
+fieldset > legend {
     display: none;
 }
 
-fieldset > fieldset{
+fieldset > fieldset {
     margin: 0;
     padding: 0;
     border: none;
@@ -305,11 +319,11 @@ footer {
 
 /* 多重table fix*/
 
-table table{
+table table {
     border: none;
 }
 
-.cbi-value-field table{
+.cbi-value-field table {
     border: none;
 }
 
@@ -413,11 +427,11 @@ td > table > tbody > tr > td {
     color: #0099CC;
 }
 
-.tabs > li[class~="active"] > a{
+.tabs > li[class~="active"] > a {
     color: #0099cc;
 }
 
-.tabs > li:hover{
+.tabs > li:hover {
     border-bottom: 0.2rem solid #C9C9C9;
 }
 
@@ -457,12 +471,17 @@ td > table > tbody > tr > td {
 }
 
 .cbi-value-helpicon > img {
-    float: left;
+    display: none;
+}
+
+.cbi-value-helpicon:before {
+    content: "\f059";
 }
 
 .cbi-value-description {
-    font-size: 0.5rem;
+    font-size: small;
     opacity: 0.5;
+    padding: 0.5rem 0 0 0;
 }
 
 .cbi-value-title {
@@ -592,7 +611,7 @@ td > table > tbody > tr > td {
     margin-bottom: 20px;
     border-radius: 0;
     background-color: #FFF;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.16),0 0 2px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 2px 0 rgba(0, 0, 0, .12);
     border: none;
 }
 
@@ -729,22 +748,12 @@ small {
     white-space: normal;
 }
 
-.cbi-button-up {
-    display: inline-block;
-    background-position: center center;
-    min-width: 0;
-    content: "123";
-    background-image: url('/luci-static/resources/cbi/up.gif');
-    background-repeat: no-repeat;
-}
-
+.cbi-button-up,
 .cbi-button-down {
     display: inline-block;
-    background-position: center center;
     min-width: 0;
-    content: "123";
-    background-image: url('/luci-static/resources/cbi/down.gif');
-    background-repeat: no-repeat;
+    padding: 0.2rem 0.3rem;
+    font-size: 1.3rem;
 }
 
 #diag-rc-output > pre {
@@ -805,7 +814,6 @@ input[name="nslookup"] {
     display: none;
 }
 
-
 /* fix Main Login*/
 .node-main-login > .main > .main-left {
     display: none;
@@ -842,22 +850,21 @@ input[name="nslookup"] {
     text-align: left;
 }
 
-.node-main-login > .main form >div:nth-last-child(1){
+.node-main-login > .main form > div:nth-last-child(1) {
     float: right;
 }
 
-
 /* fix status processes */
 
-.node-status-processes > .main table tr td:nth-child(3){
+.node-status-processes > .main table tr td:nth-child(3) {
     white-space: normal;
 }
 
-.node-status-firewall  > .main fieldset li{
+.node-status-firewall > .main fieldset li {
     display: inline-block;
 }
 
-.node-status-firewall  > .main fieldset li > a{
+.node-status-firewall > .main fieldset li > a {
     box-sizing: border-box;
     font: inherit;
     overflow: visible;
@@ -889,12 +896,12 @@ input[name="nslookup"] {
 
 /* fix system reboot */
 
-.node-system-reboot  > .main > .main-right p ,
-.node-system-reboot  > .main > .main-right h3{
+.node-system-reboot > .main > .main-right p,
+.node-system-reboot > .main > .main-right h3 {
     padding-left: 2rem;
 }
 
-.node-system-reboot  > .main > .main-right p > a{
+.node-system-reboot > .main > .main-right p > a {
     margin-top: 2rem;
     text-decoration: none;
     box-sizing: border-box;
@@ -925,22 +932,42 @@ input[name="nslookup"] {
     border-color: #d43f3a !important;
 }
 
+/* fix Services  Network Shares*/
+.node-services-network_shares > .main .cbi-tabcontainer:nth-child(3) .cbi-value-title {
+    margin-bottom: 1rem;
+}
 
+.node-services-network_shares > .main .cbi-tabcontainer:nth-child(3) .cbi-value-field {
+    display: list-item;
+}
 
+.node-services-network_shares > .main .cbi-tabcontainer:nth-child(3) .cbi-value-description {
+    padding-top: 1rem;
+}
+
+/* fix System Software*/
+.node-system-software > .main table tr td:nth-child(4) {
+    white-space: normal;
+    font-size: small;
+    color: #404040;
+}
+
+.node-system-software > .main .cbi-tabmenu > li > a, .tabs > li > a {
+    padding: 0.5rem 1rem;
+}
 
 .node-status-firewall fieldset,
 .node-system-software fieldset,
-.node-system-backup fieldset{
+.node-system-backup fieldset {
     margin-top: 0;
 }
 
 .node-status-firewall .cbi-tabmenu,
 .node-system-software .cbi-tabmenu,
-.node-system-backup .cbi-tabmenu{
+.node-system-backup .cbi-tabmenu {
     border: none;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.16),0 0 2px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 2px 0 rgba(0, 0, 0, .12);
 }
-
 
 @media screen and (max-width: 1600px) {
     .main-left {
@@ -969,7 +996,7 @@ input[name="nslookup"] {
         min-width: 15rem;
     }
 
-    fieldset{
+    fieldset {
         padding: 1rem;
     }
 }
@@ -1006,18 +1033,18 @@ input[name="nslookup"] {
         font-size: 1.7rem;
     }
 
-    .node-main-login .showSide{
+    .node-main-login .showSide {
         display: none !important;
     }
 
-    .cbi-value-title{
+    .cbi-value-title {
         min-width: 6rem;
     }
 
 }
 
 @media screen and (max-width: 480px) {
-    *{
+    * {
         font-size: 90%;
     }
 
@@ -1042,7 +1069,7 @@ input[name="nslookup"] {
         font-size: 1.1rem;
     }
 
-    .cbi-value-title{
+    .cbi-value-title {
         min-width: 0rem !important;
         display: block;
         margin-top: 1rem;
@@ -1054,7 +1081,7 @@ input[name="nslookup"] {
         box-sizing: border-box;
     }
 
-    .cbi-value > .cbi-value-field{
+    .cbi-value > .cbi-value-field {
         display: inline-block;
     }
 
@@ -1066,19 +1093,19 @@ input[name="nslookup"] {
         padding: 0.2rem 0.7rem;
     }
 
-    .cbi-page-actions > div{
+    .cbi-page-actions > div {
         display: none;
     }
 
-    .node-main-login > .main .container{
+    .node-main-login > .main .container {
         padding: 0.5rem 1rem 2rem 1rem;
     }
 
-    .node-main-login > .main .cbi-value{
+    .node-main-login > .main .cbi-value {
         padding: 0;
     }
 
-    .node-main-login > .main form >div:nth-last-child(1){
+    .node-main-login > .main form > div:nth-last-child(1) {
         margin-top: 2rem;
     }
 
@@ -1086,23 +1113,23 @@ input[name="nslookup"] {
         font-size: 1.2rem;
     }
 
-    .node-main-login > .main fieldset{
+    .node-main-login > .main fieldset {
         margin: 0;
     }
 
-    h2{
+    h2 {
         font-size: 2rem;
     }
 
-    .tabs > li > a{
+    .tabs > li > a {
         font-size: 1.2rem;
     }
 
-    header{
+    header {
         height: 3.5rem;
     }
 
-    header > .container{
+    header > .container {
         margin-top: 0.25rem;
     }
 
@@ -1111,7 +1138,7 @@ input[name="nslookup"] {
     }
 
     select,
-    input{
+    input {
         font-size: 1.2rem;
     }
 }

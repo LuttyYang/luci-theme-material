@@ -19,7 +19,7 @@ define Package/luci-theme-$(THEME_NAME)
   SECTION:=luci
   CATEGORY:=LuCI
   SUBMENU:=9. Themes
-  DEPENDS:=+luci-theme-base
+  DEPENDS:=+libc
   TITLE:=LuCI Theme - $(THEME_TITLE)
   URL:=http://wcan.in/
   PKGARCH:=all
