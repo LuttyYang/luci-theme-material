@@ -227,7 +227,7 @@ function trimText(text) {
         }
     }
     var mainNodeName = "node-"+ tree[0] + "-" + tree[1];
-    $("body").addClass(mainNodeName.replace(" ","_").toLowerCase());
+    $("body").addClass(mainNodeName.replace(/[ \t\n\r\/]+/g,"_").toLowerCase());
     $(".cbi-button-up").val("");
     $(".cbi-button-down").val("");
 

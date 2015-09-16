@@ -132,6 +132,63 @@ header > .container > .brand {
     vertical-align: text-bottom;
 }
 
+.warning {
+    background-color: #FF7D60;
+    color: #FFF;
+}
+
+.errorbox,
+.alert-message {
+    margin: 2rem 0 0 0;
+    padding: 2rem;
+    border: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100%;
+    line-height: 1;
+    font-family: inherit;
+    min-width: inherit;
+    overflow: auto;
+    border-radius: 0;
+    background-color: #FFF;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 2px 0 rgba(0, 0, 0, .12);
+}
+
+.errorbox{
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
+#maincontent > .container > div:nth-child(1).alert-message.warning > a {
+    box-sizing: border-box;
+    font: inherit;
+    overflow: visible;
+    text-transform: none;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    min-width: 6rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    line-height: 1.42857143;
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    margin-top: 2rem;
+    text-decoration: inherit;
+}
+
 .main > .main-left > .nav {
     margin-top: 0.5rem;
 }
@@ -225,6 +282,10 @@ h3 {
     margin: 2rem 0 0 0;
     font-size: 2rem;
     padding-bottom: 10px;
+}
+
+h4 {
+
 }
 
 fieldset {
@@ -958,13 +1019,13 @@ input[name="nslookup"] {
 
 .node-status-firewall fieldset,
 .node-system-software fieldset,
-.node-system-backup fieldset {
+.node-system-backup_flash_firmware fieldset {
     margin-top: 0;
 }
 
 .node-status-firewall .cbi-tabmenu,
 .node-system-software .cbi-tabmenu,
-.node-system-backup .cbi-tabmenu {
+.node-system-backup_flash_firmware .cbi-tabmenu {
     border: none;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16), 0 0 2px 0 rgba(0, 0, 0, .12);
 }
