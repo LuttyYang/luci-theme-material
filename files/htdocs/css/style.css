@@ -307,7 +307,7 @@ fieldset {
 }
 
 fieldset > legend {
-    display: none;
+    display: none !important;
 }
 
 fieldset > fieldset {
