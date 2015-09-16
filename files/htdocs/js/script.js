@@ -289,4 +289,6 @@ function trimText(text) {
         var that = $(this);
         that.after("<span class='panel-title'>" + that.text() + "</span>");
     });
+
+    window.scrollTo(0,1);
 })(jQuery);

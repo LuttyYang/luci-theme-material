@@ -31,6 +31,7 @@
     padding: 0;
     font-size: 1rem;
     font-size: 100%;
+    box-sizing: border-box;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -1102,6 +1103,32 @@ input[name="nslookup"] {
         min-width: 6rem;
     }
 
+
+    .node-network-diagnostics > .main .cbi-map fieldset > div *{
+        width: 100% !important;
+    }
+
+    .node-network-diagnostics > .main .cbi-map fieldset > div input[type="text"]{
+        margin: 3rem 0 0 0 !important;
+    }
+
+    .node-network-diagnostics > .main .cbi-map fieldset > div:nth-child(4) input[type="text"]{
+        margin: 0 !important;
+    }
+
+    .node-network-diagnostics > .main .cbi-map fieldset > div select,
+    .node-network-diagnostics > .main .cbi-map fieldset > div input[type="button"]{
+        margin: 1rem 0 0 0;
+    }
+
+    .node-network-diagnostics > .main .cbi-map fieldset > div{
+        width: 100% !important;
+    }
+
+
+    #diag-rc-output > pre {
+        font-size: 1.2rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
