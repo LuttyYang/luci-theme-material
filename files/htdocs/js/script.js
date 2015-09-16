@@ -121,11 +121,11 @@ function trimText(text) {
             tree = hash.split("|");
             $(".main > .main-left > .nav > .slide > .menu").each(function () {
                 var that = $(this);
-                if (trimText(that.text()) == tree[0]) {
+                if (trimText(that.data("title")) == tree[0]) {
                     that.click();
                     that.next().find("a").each(function () {
                         var that = $(this);
-                        if (trimText(that.text()) == tree[1]) {
+                        if (trimText(that.data("title")) == tree[1]) {
                             lastNode = that.parent();
                             lastNode.addClass("active");
                             ret = true;
@@ -178,7 +178,7 @@ function trimText(text) {
                 if (currentNode.indexOf(getUrlNode(href)) != -1){
                     ulNode.click();
                     lastNode = that.parent();
-                    tree = [trimText(ulNode.text()), trimText(lastNode.text())];
+                    tree = [trimText(ulNode.data("title")), trimText(that.data("title"))];
                     lastNode.addClass("active");
                     ret = true;
                     return true;
@@ -205,7 +205,7 @@ function trimText(text) {
 
     $(".main > .main-left > .nav > .slide > .slide-menu > li > a").click(function () {
         var href = $(this).attr("href");
-        var tree = trimText($(this).parent().parent().prev().text()) + "|" + trimText($(this).text());
+        var tree = trimText($(this).parent().parent().prev().data("title")) + "|" + trimText($(this).data("title"));
         tree = $.base64.encode(tree);
         window.location = href + "#tree-" + tree;
         if (lastNode != undefined) lastNode.removeClass("active");

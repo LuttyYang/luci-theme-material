@@ -177,7 +177,7 @@
 				 local href  = controller .. prefix .. r ..
 				 (nnode.query and http.build_querystring(nnode.query) or "")
 				 %>
-				 <li><a href="<%=pcdata(href)%>"><%=pcdata(striptags(translate(nnode.title)))%></a></li>
+				 <li><a data-title="<%=pcdata(striptags(nnode.title))%>" href="<%=pcdata(href)%>"><%=pcdata(striptags(translate(nnode.title)))%></a></li>
 				 <%-
 				 end
 				 %>
@@ -198,12 +198,12 @@
 			 if #grandchildren > 0 then
 			 %>
 			 <li class="slide">
-				 <a class="menu" href="#"><%=pcdata(striptags(translate(nnode.title)))%></a>
+				 <a class="menu" data-title="<%=pcdata(striptags(nnode.title))%>" href="#"><%=pcdata(striptags(translate(nnode.title)))%></a>
 				 <%- submenu("/" .. category .. "/" .. r .. "/", nnode) %>
 			 </li>
 			 <%          else %>
 			 <li>
-				 <a href="<%=pcdata(href)%>"><%=pcdata(striptags(translate(nnode.title)))%></a>
+				 <a data-title="<%=pcdata(striptags(nnode.title))%>" href="<%=pcdata(href)%>"><%=pcdata(striptags(translate(nnode.title)))%></a>
 			 </li>
 			 <%
 			 end
