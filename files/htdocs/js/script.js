@@ -287,6 +287,6 @@ function trimText(text) {
 
     $("legend").each(function () {
         var that = $(this);
-        that.replaceWith("<span class='panel-title'>" + that.text() + "</span>");
+        that.after("<span class='panel-title'>" + that.text() + "</span>");
     });
 })(jQuery);
