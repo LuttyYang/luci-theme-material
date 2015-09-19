@@ -222,7 +222,11 @@
      * fix menu click
      */
     $(".main > .main-left > .nav > .slide > .slide-menu > li").click(function () {
-        $(this).find("a").click();
+        if (lastNode != undefined) lastNode.removeClass("active");
+        $(this).addClass("active");
+        $(".main > .loading").fadeIn();
+        window.location = $($(this).find("a")[0]).attr("href");
+        return;
     });
 
     /**
