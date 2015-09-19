@@ -121,6 +121,8 @@
 }(jQuery));
 
 (function ($) {
+    $(".main > .loading").fadeOut();
+
     /**
      * trim text, Remove spaces, wrap
      * @param text
@@ -133,35 +135,6 @@
 
     var tree = undefined;
     var lastNode = undefined;
-
-    /**
-     * get the current node by Hash (reserve)
-     * @returns {boolean} success?
-     */
-    function getCurrentNodeByHash() {
-        var ret = false;
-        var hash = window.location.hash;
-        if (hash.substr(0, 6) == "#tree-") {
-            hash = $.base64.decode(hash.substr(6));
-            tree = hash.split("|");
-            $(".main > .main-left > .nav > .slide > .menu").each(function () {
-                var that = $(this);
-                if (trimText(that.data("title")) == tree[0]) {
-                    that.click();
-                    that.next().find("a").each(function () {
-                        var that = $(this);
-                        if (trimText(that.data("title")) == tree[1]) {
-                            lastNode = that.parent();
-                            lastNode.addClass("active");
-                            ret = true;
-                            return true;
-                        }
-                    });
-                }
-            });
-        }
-        return ret;
-    }
 
     /**
      * get the current node by Burl (primary)
@@ -239,13 +212,10 @@
      * hook menu click and add the hash
      */
     $(".main > .main-left > .nav > .slide > .slide-menu > li > a").click(function () {
-        var href = $(this).attr("href");
-        var tree = trimText($(this).parent().parent().prev().data("title")) + "|" + trimText($(this).data("title"));
-        tree = $.base64.encode(tree);
-        window.location = href + "#tree-" + tree;
         if (lastNode != undefined) lastNode.removeClass("active");
         $(this).parent().addClass("active");
-        return false;
+        $(".main > .loading").fadeIn();
+        return true;
     });
 
     /**
@@ -259,7 +229,6 @@
      * get current node and open it
      */
     if (!getCurrentNodeByUrl()){
-        getCurrentNodeByHash();
         if (tree != undefined && tree[0] == "Status" && tree[1] == "Overview"){
             //overview
             lastNode.addClass("active");
@@ -283,10 +252,8 @@
         if (onclick == undefined || onclick == ""){
             that.click(function () {
                 var href = that.attr("href");
-                if (tree != undefined && href.indexOf("Text") == -1) {
-                    window.location = href + "#tree-" +  $.base64.encode(tree[0] + "|" + tree[1]);
-                    return false;
-                }else{
+                if (href.indexOf("#") == -1){
+                    $(".main > .loading").fadeIn();
                     return true;
                 }
             });
