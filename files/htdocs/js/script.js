@@ -135,6 +135,7 @@
 
     var tree = undefined;
     var lastNode = undefined;
+    var mainNodeName = undefined;
 
     /**
      * get the current node by Burl (primary)
@@ -240,8 +241,10 @@
         }
     }
     if (tree != undefined){
-        var mainNodeName = "node-"+ tree[0] + "-" + tree[1];
-        $("body").addClass(mainNodeName.replace(/[ \t\n\r\/]+/g,"_").toLowerCase());
+        mainNodeName = "node-"+ tree[0] + "-" + tree[1];
+        mainNodeName = mainNodeName.replace(/[ \t\n\r\/]+/g,"_").toLowerCase();
+        $("body").addClass(mainNodeName);
+
     }
     $(".cbi-button-up").val("");
     $(".cbi-button-down").val("");
@@ -311,4 +314,22 @@
         var that = $(this);
         that.after("<span class='panel-title'>" + that.text() + "</span>");
     });
+
+
+    $(".main-right").focus();
+    $(".main-right").blur();
+
+    if (mainNodeName != undefined){
+        console.log(mainNodeName);
+        switch (mainNodeName){
+            case "node-status-system_log":
+            case "node-status-kernel_log":
+                $("#syslog").focus(function () {
+                    $("#syslog").blur();
+                    $(".main-right").focus();
+                    $(".main-right").blur();
+                });
+                break;
+        }
+    }
 })(jQuery);
