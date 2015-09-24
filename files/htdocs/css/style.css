@@ -677,6 +677,8 @@ td > table > tbody > tr > td {
 
 .cbi-value {
     padding: 1rem;
+    display: inline-block;
+    width: 100%;
 }
 
 .cbi-section-table-descr > .cbi-section-table-cell,
