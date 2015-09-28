@@ -342,4 +342,13 @@
                 break;
         }
     }
+
+
+    document.addEventListener("touchmove", function(evt){
+        evt.preventDefault();
+    }, false);
+    var container = document.getElementById("maincontent");
+    container.addEventListener("touchmove", function(evt){
+        evt.stopPropagation();
+    }, false);
 })(jQuery);
