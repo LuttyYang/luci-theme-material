@@ -10,7 +10,7 @@ THEME_NAME:=material
 THEME_TITLE:=Material
 
 PKG_NAME:=luci-theme-$(THEME_NAME)
-PKG_VERSION:=0.2.6
+PKG_VERSION:=0.2.7
 PKG_RELEASE:=1
 
 include $(INCLUDE_DIR)/package.mk
