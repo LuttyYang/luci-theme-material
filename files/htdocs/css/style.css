@@ -151,6 +151,8 @@ footer > a{
     top: 4rem;
     bottom: 0rem;
     position: relative;
+    height: 100%;
+    height: calc(100% - 4rem);
 }
 
 .main > .loading{
@@ -212,6 +214,10 @@ footer > a{
     width: calc(100% - 17rem);
     float: right;
     height: 100%;
+    background-color: #EEE;
+}
+
+.main-right > #maincontent{
     background-color: #EEE;
 }
 
@@ -1199,6 +1205,7 @@ body.lang_pl.node-main-login .cbi-value-title {
 
     .main {
         top: 3.5rem;
+        height: calc(100% - 3.5rem);
     }
 
     .main-left {
