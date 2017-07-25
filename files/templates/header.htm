@@ -215,6 +215,7 @@
 </head>
 <body class="lang_<%=luci.i18n.context.lang%> <%- if node then %><%= striptags( node.title ) %><%- end %> <% if luci.dispatcher.context.authsession then %>logged-in<% end %>">
 <header>
+	<div class="page_loading"><span><div class="loading-img"></div>Loading...</span></div>
 	<div class="container">
 		<span class="showSide"></span>
 		<a class="brand" href="#"><%=boardinfo.hostname or "?"%></a>
@@ -228,7 +229,6 @@
 	</div>
 </header>
 <div class="main">
-	 <div style="" class="loading"><span><div class="loading-img"></div>Loading...</span></div>
 	 <div class="main-left">
 		<% render_topmenu() %>
 	 </div>
