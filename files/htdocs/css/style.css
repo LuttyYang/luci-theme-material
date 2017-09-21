@@ -159,31 +159,29 @@ footer > a {
     height: calc(100% - 4rem);
 }
 
-.page_loading {
-    position: absolute;
-    top: 0rem;
+.main > .loading {
+    position: fixed;
     width: 100%;
-    height: 4rem;
-    line-height: 4rem;
+    height: 100%;
     z-index: 1000;
     display: block;
     background-color: rgb(240, 240, 240);
+    top: 0;
+}
+
+.main > .loading > span {
     display: block;
     text-align: center;
+    margin-top: 2rem;
     color: #888;
     font-size: 1.2rem;
 }
 
-.page_loading div {
-    display: inline;
-    vertical-align: middle;
-}
-
-.page_loading .loading-img:before {
+.main > .loading > span > .loading-img:before {
     content: "\e603";
 }
 
-.page_loading .loading-img {
+.main > .loading > span > .loading-img {
     animation: anim-rotate 2s infinite linear;
     margin-right: 0.2rem;
     display: inline-block;
