@@ -18,9 +18,6 @@
  *  Licensed to the public under the Apache License 2.0
  */
 
-/*
- *  Font generate by Icomoon<icomoon.io>
- */
 @font-face {
     font-family: 'icomoon';
     src: url('../fonts/font.eot');
@@ -162,29 +159,31 @@ footer > a {
     height: calc(100% - 4rem);
 }
 
-.main > .loading {
-    position: fixed;
+.page_loading {
+    position: absolute;
+    top: 0rem;
     width: 100%;
-    height: 100%;
+    height: 4rem;
+    line-height: 4rem;
     z-index: 1000;
     display: block;
     background-color: rgb(240, 240, 240);
-    top: 0;
-}
-
-.main > .loading > span {
     display: block;
     text-align: center;
-    margin-top: 2rem;
     color: #888;
     font-size: 1.2rem;
 }
 
-.main > .loading > span > .loading-img:before {
+.page_loading div {
+    display: inline;
+    vertical-align: middle;
+}
+
+.page_loading .loading-img:before {
     content: "\e603";
 }
 
-.main > .loading > span > .loading-img {
+.page_loading .loading-img {
     animation: anim-rotate 2s infinite linear;
     margin-right: 0.2rem;
     display: inline-block;
@@ -1270,6 +1269,10 @@ body.lang_pl.node-main-login .cbi-value-title {
 }
 
 @media screen and (max-width: 1280px) {
+    .page_loading {
+        height: 3.5rem;
+        line-height: 3.5rem;
+    }
     header {
         height: 3.5rem;
     }
