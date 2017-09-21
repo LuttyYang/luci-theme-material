@@ -203,9 +203,7 @@ footer > a {
 .main-left {
     float: left;
     top: 4rem;
-    width: 15%;
-    width: calc(0% + 15rem);
-    height: 100%;
+    width: 15rem;
     height: calc(100% - 4rem);
     background-color: white;
     overflow-x: auto;
@@ -1228,7 +1226,7 @@ body.lang_pl.node-main-login .cbi-value-title {
 
 @media screen and (max-width: 1600px) {
     .main-left {
-        width: calc(0% + 13rem);
+        width: calc(13rem);
     }
 
     .main-right {
@@ -1285,7 +1283,7 @@ body.lang_pl.node-main-login .cbi-value-title {
     }
 
     .main-left {
-        width: calc(0% + 13rem);
+        width: calc(13rem);
         top: 3.5rem;
         height: calc(100% - 3.5rem);
     }
