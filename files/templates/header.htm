@@ -53,6 +53,10 @@
 	-- send as HTML5
 	http.prepare_content("text/html")
 
+	local function url(prefix, name)
+		return controller .. "/" .. prefix .. "/" ..  name .. "/"
+	end
+
 	local function nodeurl(prefix, name, query)
 		local u = url(prefix, name)
 		if query then
